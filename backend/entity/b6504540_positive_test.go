@@ -3,7 +3,7 @@ package entity
 import (
 	"testing"
 
-	"example.com/final/entity"
+	"github.com/Bam1q/sut-final-lab/backend/entity"
 	"github.com/asaskevich/govalidator"
 	. "github.com/onsi/gomega"
 )
@@ -21,7 +21,6 @@ func TestPositive(t *testing.T) {
 		ok, err := govalidator.ValidateStruct(device)
 		g.Expect(ok).To(BeTrue())
 		g.Expect(err).To(BeNil())
-		
 
 	})
 }
