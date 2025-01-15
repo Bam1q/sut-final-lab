@@ -13,15 +13,15 @@ func TestNagative(t *testing.T) {
 
 	t.Run(`Test Positive`, func(t *testing.T) {
 		device := entity.Devices{
-			DeviceID:   "AB1234567899",
-			IpAddress:  "192.168", // ผิด
+			DeviceID:   "AB1234567899",// ผิด
+			IpAddress:  "192.168.160.1", 
 			DeviceName: "Gomaga",
 		}
 
 		ok, err := govalidator.ValidateStruct(device)
 		g.Expect(ok).NotTo(BeTrue())
 		g.Expect(err).NotTo(BeNil())
-		g.Expext(err.Error()).To(Equal("IpAddress must be a valid IP address"))
+		g.Expect(err.Error()).To(Equal("DeviceID must start with 2 uppercase letters followed by 10 digits"))
 
 	})
 }
